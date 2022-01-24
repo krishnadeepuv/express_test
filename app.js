@@ -10,6 +10,7 @@ const path = require('path');
 const app = express();
 
 app.use(body_parser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/admin', admin_route);
 app.use(shop_route);
